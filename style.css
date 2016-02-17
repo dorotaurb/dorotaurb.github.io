@@ -98,6 +98,8 @@ h3 {
     height: 500px;
     background-image:url("http://images.inc.com/uploaded_files/image/1940x900/getty_160910502_970647970450080_57689.jpg");
     background-size: cover;
+    opacity:0;
+
 }
 
 .projects h2 {

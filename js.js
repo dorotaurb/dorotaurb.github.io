@@ -33,16 +33,14 @@ $('#proj-5').mouseover(function() {
 $('#proj-5').mouseout(function() {
   $('#img-title5').css("visibility","hidden");
 });
-  
-});
 
-$(document).ready(function() {
+
         $(window).scroll( function(){
             $('.jumbotron').each( function(i){
             var bottom_of_object = $(this).offset().top + $(this).outerHeight();
             var bottom_of_window = $(window).scrollTop() + $(window).height();
             if( bottom_of_window > bottom_of_object ){
-                $(this).animate({'opacity':'1'},300);
+                $(this).animate({'opacity':'1'},'slow');
             }
         }); 
     });

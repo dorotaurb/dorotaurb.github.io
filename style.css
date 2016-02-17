@@ -176,3 +176,10 @@ form {
 	margin:0 auto;
 	width:1200px;
 }
+
+.img-title {
+   position: absolute; 
+   top: 200px; 
+   left: 0; 
+   width: 100%; 
+}

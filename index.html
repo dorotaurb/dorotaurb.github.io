@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>EasySend app</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc.5/angular-material.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc.5/angular-material.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body layout="column" ng-app="myApp" ng-cloak ng-controller="controller">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h1>{{title}}</h1>
+        </div>
+    </md-toolbar>
+    <div class="choosecountry">
+        <span>Przelewam pieniądze z </span>
+
+        <select ng-options="item.name for item in countries" ng-model="selcountry" ng-change="countryincheck()">
+              </select>
+        <span>do</span>
+        <select ng-model="destination" ng-change="destcheck()" ng-options="item.name for item in destinations track by item.name">
+                                            </select>
+    </div>
+    <div layout="row" class="choosecurrencies">
+        <div flex>
+            <md-input-container>
+                <input input type="number" ng-model="amount_in" ng-change="moneyocheck()" placeholder="Kwota początkowa"> </md-input-container>
+        </div>
+        <div flex>
+            <select class="curr" ng-model="currency1" ng-options="item as item.currency_in.name for item in currency track by item.currency_in.name">
+                                        </select>
+        </div>
+        <div flex>
+            <md-input-container>
+                <input ng-model="amount_out" ng-change="moneyicheck()" placeholder="Kwota końcowa">
+            </md-input-container>
+        </div>
+        <div flex>
+            <select class="curr" ng-change="moneyocheck()" ng-model="currency2" ng-options="item as item.currency_out.name for item in currency track by item.currency_out.name">
+                                            </select>
+        </div>
+    </div>
+    <div class="exchangerate">
+        <h4>Kurs: {{default}} {{currency1.currency_in.name}} {{eq}} {{unit | limitTo: 4}} {{currency2.currency_out.name}}</h4>
+    </div>
+    <div layout="row">
+        <div flex class="fast">
+            <md-radio-group>
+                <md-radio-button value="fast"> Fast </md-radio-button>
+            </md-radio-group>
+
+        </div>
+        <div flex class="superfast" ng-model="fast" ng-show="fast">
+
+            <md-radio-group>
+                <md-radio-button value="superfast"> Superfast </md-radio-button>
+            </md-radio-group>
+
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

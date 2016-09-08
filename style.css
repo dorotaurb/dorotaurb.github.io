@@ -22,10 +22,12 @@ h2 {
 	text-align: center;
 }
 
+a {
+	color: #000 !important;
+}
 .row a {
 	text-decoration: none;
 	font-family: 'Oleo Script', cursive ;
-	color: #000 !important;
 	font-size: 1.7em;
 }
 
@@ -70,4 +72,8 @@ h2 {
 
 #searchbox {
 	margin-left: 5%;
+}
+
+ul {
+	margin-top: 4% !important;
 }

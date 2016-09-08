@@ -36,8 +36,9 @@
         </select>posts
         <input id="searchbox" ng-model="query" type="text"
         placeholder="Search" autofocus>
+        <hr>
         <div class="row" ng-repeat="collatedPostList in collatedPosts">
-            <div class="onepost col-xs-4 box" ng-repeat="post in collatedPostList | filter:query | orderBy: 'title'">
+            <div class="onepost col-xs-4 box" ng-repeat="post in collatedPostList | filter:query">
                 <div class="inner">
              <a href="#posts/{{post.id}}">{{post.title}}</a> <br/>
                     <p>{{post.body | limitTo: 60}}{{post.body.length
@@ -50,9 +51,16 @@
         </div>
     </script>
     <script type="text/ng-template" id="posts.htm">
+    <hr>
     <h2>{{post.title}}</h2>
-    <p>{{post.body}}</p>
-    {{post.comments}}
+    <p id="fullpost">{{post.body}}</p>
+    <h3>Comments:</h3>
+    <div ng-repeat="comment in comments">
+    <h4>{{comment.name}}</h4>
+    <h5>{{comment.email}}</h5>
+    <p>{{comment.body}}<p>
+    <hr>
+    </div>
     <a href="#allposts">
                 <button type="button" class="btn btn-primary">
             Go back to post list

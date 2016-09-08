@@ -18,6 +18,10 @@ h1 a, h1 a:hover{
 h2 {
 		font-family: 'Oleo Script', cursive !important;
 }
+
+h5 {
+	font-style: italic;
+}
 .adding {
 	text-align: center;
 }
@@ -76,4 +80,8 @@ a {
 
 ul {
 	margin-top: 4% !important;
+}
+
+#fullpost {
+	margin: 4% 0;
 }

@@ -21,10 +21,8 @@ myApp.config(function($routeProvider) {
     $routeProvider.when('/', {
         templateUrl: 'allposts.htm',
         controller: 'PostsController'
-    }).when('/posts/{{posts.id}}', {
-        templateUrl: 'posts.htm',
-        controller: 'PostController'
-    }).when('/addpost', {
+    }).when('/posts/:postId', { templateUrl: 'posts.htm', controller: 'PostController' })
+.when('/addpost', {
         templateUrl: 'addpost.htm',
         controller: 'AddController'
     }).otherwise({
@@ -34,7 +32,13 @@ myApp.config(function($routeProvider) {
 
 myApp.controller('PostsController', function($scope) {});
 
-myApp.controller('PostController', function($scope) {});
+myApp.controller('PostController', function($scope,$routeParams,$http) {
+  console.log($routeParams.postId)
+   $http({
+        method: 'GET',
+        url: "http://jsonplaceholder.typicode.com/posts/"+$routeParams.postId
+    }).then(function(response) {$scope.post=response.data});
+});
 
 myApp.controller('AddController', function($scope) {});
 

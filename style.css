@@ -60,6 +60,6 @@ h1 {
 
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
-uib-alert {
-	margin-top: 3%;
+#searchbox {
+	margin-left: 5%;
 }

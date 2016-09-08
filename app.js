@@ -21,7 +21,7 @@ myApp.config(function($routeProvider) {
     $routeProvider.when('/', {
         templateUrl: 'allposts.htm',
         controller: 'PostsController'
-    }).when('/posts', {
+    }).when('/posts/{{posts.id}}', {
         templateUrl: 'posts.htm',
         controller: 'PostController'
     }).when('/addpost', {

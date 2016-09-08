@@ -10,6 +10,14 @@ h1 {
 	font-size: 4em !important;
 }
 
+h1 a, h1 a:hover{
+	text-decoration: none;
+	color: #000;
+}
+
+h2 {
+		font-family: 'Oleo Script', cursive !important;
+}
 .adding {
 	text-align: center;
 }

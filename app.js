@@ -100,7 +100,9 @@ myApp.controller('controller', function($scope, $http) {
         };
     });
 
-
+      $scope.filterFunction = function(element) {
+         return element.title.match(/^Ma/) ? true : false;
+  };
     $scope.alerts = [];
 
     $scope.msg = "Well done! Your post was added";

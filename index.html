@@ -38,7 +38,7 @@
         <div class="row" ng-repeat="collatedPostList in collatedPosts">
             <div class="onepost col-xs-4 box" ng-repeat="post in collatedPostList track by $index">
                 <div class="inner">
-             <a href="#posts/{{$index}}">{{post.title}}</a> <br/>
+             <a href="#posts/{{post.id}}">{{post.title}}</a> <br/>
                     <p>{{post.body | limitTo: 60}}{{post.body.length
                         < 20 ? '' : '...'}}</p>
                 </div>
@@ -71,7 +71,7 @@
         </form>
     </script>
     <div ng-view></div>
-        <script src="app.js"></script>
+    <script src="app.js"></script>
 
 </body>
 

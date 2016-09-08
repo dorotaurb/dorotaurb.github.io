@@ -67,7 +67,8 @@ myApp.controller('controller', function($scope, $http, $routeParams) {
             url: "http://jsonplaceholder.typicode.com/posts/" + $routeParams.postId + "/comments"
             }).then(function(response) {
               $scope.comments = response.data;
-              $scope.comment = response.data[0] });
+              $scope.comment = response.data[0];
+               });
    
 
         function getCollatedPosts(posts) {

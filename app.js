@@ -33,17 +33,20 @@ myApp.config(function($routeProvider) {
 myApp.controller('PostsController', function($scope) {});
 
 myApp.controller('PostController', function($scope,$routeParams,$http) {
-  console.log($routeParams.postId)
+  console.log($routeParams.postId);
+  
    $http({
         method: 'GET',
         url: "http://jsonplaceholder.typicode.com/posts/"+$routeParams.postId
-    }).then(function(response) {$scope.post=response.data});
+    }).then(function(response) {
+     $scope.post=response.data;
+   });
 });
 
 myApp.controller('AddController', function($scope) {});
 
 
-myApp.controller('controller', function($scope, $http) {
+myApp.controller('controller', function($scope, $http, $routeParams) {
     $scope.apptitle = "Kansi app";
 
     $http({
@@ -59,6 +62,13 @@ myApp.controller('controller', function($scope, $http) {
         $scope.collatedPosts = getCollatedPosts($scope.posts);
         $scope.newPost = {};
 
+            $http ({
+            method: 'GET',
+            url: "http://jsonplaceholder.typicode.com/posts/" + $routeParams.postId + "/comments"
+            }).then(function(response) {
+              $scope.comments = response.data;
+              $scope.comment = response.data[0] });
+   
 
         function getCollatedPosts(posts) {
             if (!posts) {

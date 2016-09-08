@@ -1,0 +1,65 @@
+body {
+	width: 90%;
+	margin: 0 auto !important;
+	font-family: 'Lato', sans-serif;
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Oleo Script', cursive !important;
+	font-size: 4em !important;
+}
+
+.adding {
+	text-align: center;
+}
+
+.row a {
+	text-decoration: none;
+	font-family: 'Oleo Script', cursive ;
+	color: #000 !important;
+	font-size: 1.7em;
+}
+
+.row p {
+	margin-top: 3%;
+}
+
+#titleadd {
+	width: 50%;
+	height: 40px;
+	margin: 1% 0;
+}
+
+#textadd {
+	width: 50%;
+	height: 300px;
+	margin-bottom: 1%;
+}
+
+.box {
+    height: 100px;
+    margin-bottom: 25px;
+    background-color: #fff;
+    padding: 0 5px 0 5px;
+}
+
+.row {
+	margin-top: 4%;
+}
+
+.addbtn {
+	float: right;
+	margin-right: 2%;
+}
+
+.btn {
+		background-color:  #4C4C4C !important; 
+	border-color:  #4C4C4C !important;
+}
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+uib-alert {
+	margin-top: 3%;
+}

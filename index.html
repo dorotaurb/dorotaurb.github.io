@@ -19,7 +19,6 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
 </head>
-
 <body layout="column" ng-app="myApp" ng-cloak ng-controller="controller">
     <h1>{{apptitle}}</h1>
     <script type="text/ng-template" id="allposts.htm">
@@ -51,6 +50,10 @@
     <script type="text/ng-template" id="posts.htm">
     <h2>{{post.title}}</h2>
     <p>{{post.body}}</p>
+    <a href="#allposts">
+                <button type="button" class="btn btn-primary">
+            Go back to post list
+        </button></a>
     </script>
     <script type="text/ng-template" id="addpost.htm">
         <form ng-submit="addPost()" class="adding">
@@ -72,7 +75,6 @@
     </script>
     <div ng-view></div>
     <script src="app.js"></script>
-
 </body>
 
 </html>

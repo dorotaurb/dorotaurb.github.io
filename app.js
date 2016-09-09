@@ -40,6 +40,7 @@ myApp.controller('PostController', function($scope,$routeParams,$http) {
         url: "http://jsonplaceholder.typicode.com/posts/"+$routeParams.postId
     }).then(function(response) {
      $scope.post=response.data;
+     $scope.userId = $scope.post.userId;
    });
 });
 
@@ -61,6 +62,7 @@ myApp.controller('controller', function($scope, $http, $routeParams) {
         $scope.maxSize = 5;
         $scope.collatedPosts = getCollatedPosts($scope.posts);
         $scope.newPost = {};
+        $scope.userId = $scope.posts.userId;
 
             $http ({
             method: 'GET',
